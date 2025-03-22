@@ -15,5 +15,6 @@ with open('signature.png', 'rb') as f:
     image_data = f.read()
     # Encode en base64 et décodage en chaîne de caractères
     image_b64 = base64.b64encode(image_data).decode('utf-8')
+    print(image_b64)
     response = requests.post(url, json={'image': image_b64}, headers={'Authorization': 'Bearer ' + jwt})
     print(response.json())
